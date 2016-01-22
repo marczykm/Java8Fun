@@ -25,15 +25,15 @@ public class LambdasFilter {
     public static void oldMethod(){
         List<Apple> greenBigApples = new ArrayList<>();
         for(Apple a : apples)
-            if ("green".equals(a.getColor()) && a.getWeight() > 150)
+            if (a.isGreen() && a.isHeavierThan150())
                 greenBigApples.add(a);
         greenBigApples.forEach(System.out::print);
     }
 
     public static void newMethod(){
         List<Apple> greenBigApples = apples.stream()
-                .filter((Apple a) -> "green".equals(a.getColor()))
-                .filter((Apple a) -> a.getWeight() > 150)
+                .filter(Apple::isGreen)
+                .filter(Apple::isHeavierThan150)
                 .collect(Collectors.toList());
         greenBigApples.forEach(System.out::print);
     }

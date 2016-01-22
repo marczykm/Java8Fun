@@ -20,6 +20,14 @@ public class Apple {
         return weight;
     }
 
+    public boolean isGreen() {
+        return "green".equals(color);
+    }
+
+    public boolean isHeavierThan150(){
+        return (weight > 150);
+    }
+
     @Override
     public String toString() {
         return "Apple{" +
