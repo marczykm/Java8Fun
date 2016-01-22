@@ -3,7 +3,7 @@ import helpers.Apple;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
+import static java.util.stream.Collectors.toList;
 
 /**
  * Created by MMARCZYK on 2016-01-20.
@@ -34,7 +34,7 @@ public class LambdasFilter {
         List<Apple> greenBigApples = apples.stream()
                 .filter(Apple::isGreen)
                 .filter(Apple::isHeavierThan150)
-                .collect(Collectors.toList());
+                .collect(toList());
         greenBigApples.forEach(System.out::print);
     }
 }
